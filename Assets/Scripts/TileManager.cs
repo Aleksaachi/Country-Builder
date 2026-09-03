@@ -5,23 +5,27 @@ public class TileManager : MonoBehaviour
 {
     public static TileManager instance;
     public Tilemap buidlingTilemap;
-    public TileBase buildingTile;
+    public Tilemap decorTilemap;
     void Awake()
     {
         instance = this;
         
     }
-    public static bool GetBuidlingAtWorldPosition(Vector2 worldPosition)
+    public static TileBase GetBuidlingAt(Vector3Int worldPosition)
     {
-        Vector3Int gridPosition = GetGridPosition(worldPosition);
-
-        return instance.buidlingTilemap.GetTile(gridPosition) != null;
+        return instance.buidlingTilemap.GetTile(worldPosition);
     }
-    public static void SetBuidlingAtWorldPosition(Vector2 worldPosition)
+    public static TileBase GetDecorAt(Vector3Int worldPosition)
     {
-        Vector3Int gridPosition = GetGridPosition(worldPosition);
-
-        instance.buidlingTilemap.SetTile(gridPosition, instance.buildingTile);
+        return instance.decorTilemap.GetTile(worldPosition);
+    }
+    public static bool GetBuildable(Vector3Int worldPosition)
+    {
+        return GetBuidlingAt(worldPosition) == null && GetDecorAt(worldPosition) == null;
+    }
+    public static void SetBuidlingAt(Vector3Int worldPosition, TileBase buildingTile)
+    {
+        instance.buidlingTilemap.SetTile(worldPosition, buildingTile);
         
     }
     public static Vector3Int GetGridPosition(Vector2 worldPosition)

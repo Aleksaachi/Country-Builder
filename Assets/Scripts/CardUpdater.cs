@@ -4,20 +4,16 @@ using UnityEngine.UI;
 
 public class CardUpdater : MonoBehaviour
 {
-    public CardBase card;
     public TextMeshProUGUI nameBox;
     public TextMeshProUGUI descriptionBox;
     public TextMeshProUGUI typeBox;
     public Image image;
-    void Start()
+
+    public void UpdateVisuals(CardBase cardToUse)
     {
-        UpdateVisuals();
-    }
-    void UpdateVisuals()
-    {
-        nameBox.text = card.cardName;
-        descriptionBox.text = card.description;
-        typeBox.text = card.type.ToString();
-        image.sprite = card.icon;
+        nameBox.text = cardToUse.cardName;
+        descriptionBox.text = cardToUse.description;
+        typeBox.text = cardToUse.type.ToString();
+        image.sprite = cardToUse.icon;
     }
 }

@@ -3764,6 +3764,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1410343404}
     m_Modifications:
+    - target: {fileID: 1192309429903237601, guid: 7e6d8279afddc38499f688c595a7f3b6, type: 3}
+      propertyPath: thisCard
+      value: 
+      objectReference: {fileID: 11400000, guid: a1a71003badb60e4f8cfb9bbb3ad42b4, type: 2}
     - target: {fileID: 4031122642077437824, guid: 7e6d8279afddc38499f688c595a7f3b6, type: 3}
       propertyPath: m_Name
       value: Card (1)
@@ -5805,6 +5809,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1410343404}
     m_Modifications:
+    - target: {fileID: 1192309429903237601, guid: 7e6d8279afddc38499f688c595a7f3b6, type: 3}
+      propertyPath: thisCard
+      value: 
+      objectReference: {fileID: 11400000, guid: b74ca2198379b3c47894ff0f3c1cfed1, type: 2}
     - target: {fileID: 4031122642077437824, guid: 7e6d8279afddc38499f688c595a7f3b6, type: 3}
       propertyPath: m_Name
       value: Card (2)
@@ -5986,6 +5994,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1410343404}
     m_Modifications:
+    - target: {fileID: 1192309429903237601, guid: 7e6d8279afddc38499f688c595a7f3b6, type: 3}
+      propertyPath: thisCard
+      value: 
+      objectReference: {fileID: 11400000, guid: 2050cb777ccdb174aaf5b8e0e694a9d6, type: 2}
     - target: {fileID: 4031122642077437824, guid: 7e6d8279afddc38499f688c595a7f3b6, type: 3}
       propertyPath: m_Name
       value: Card (4)
@@ -6402,6 +6414,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1410343404}
     m_Modifications:
+    - target: {fileID: 1192309429903237601, guid: 7e6d8279afddc38499f688c595a7f3b6, type: 3}
+      propertyPath: thisCard
+      value: 
+      objectReference: {fileID: 11400000, guid: b74ca2198379b3c47894ff0f3c1cfed1, type: 2}
     - target: {fileID: 4031122642077437824, guid: 7e6d8279afddc38499f688c595a7f3b6, type: 3}
       propertyPath: m_Name
       value: Card (3)
@@ -6659,6 +6675,50 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1948710702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1948710704}
+  - component: {fileID: 1948710703}
+  m_Layer: 0
+  m_Name: CardManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1948710703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948710702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9fd3e285b455a4690b6f737113a66f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!4 &1948710704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948710702}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2054302013
 GameObject:
   m_ObjectHideFlags: 0
@@ -7324,6 +7384,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1410343404}
     m_Modifications:
+    - target: {fileID: 1192309429903237601, guid: 7e6d8279afddc38499f688c595a7f3b6, type: 3}
+      propertyPath: thisCard
+      value: 
+      objectReference: {fileID: 11400000, guid: a1a71003badb60e4f8cfb9bbb3ad42b4, type: 2}
     - target: {fileID: 4031122642077437824, guid: 7e6d8279afddc38499f688c595a7f3b6, type: 3}
       propertyPath: m_Name
       value: Card
@@ -7428,6 +7492,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1375389241}
+  - {fileID: 1948710704}
   - {fileID: 619394802}
   - {fileID: 346185148}
   - {fileID: 561284769}

@@ -71,16 +71,18 @@ public class Hand : MonoBehaviour
     public static void OnCardStartDrag(CardInHand cardObject)
     {
        instance.selectedIndex = instance.cardsInHand.IndexOf(cardObject.transform); 
+       Cursor.SetActive(true);
     }
     public static void OnCardEndDrag(CardInHand cardObject)
     {
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (!TileManager.GetBuidlingAtWorldPosition(worldPosition))
+        Vector3Int gridPosition = TileManager.GetGridPosition(worldPosition);
+        bool used = cardObject.thisCard.UseOnTile(gridPosition);
+        if (used)
         {
-            TileManager.SetBuidlingAtWorldPosition(worldPosition);
-            instance.cardsInHand.Remove(cardObject.transform);
-            Destroy(cardObject.gameObject);
+            RemoveCardFromHand(cardObject);
             instance.selectedIndex = -1;
+            instance.hoverIndex = -1;
         }else{
             int index = instance.cardsInHand.IndexOf(cardObject.transform);
             if (instance.selectedIndex == index)
@@ -88,5 +90,11 @@ public class Hand : MonoBehaviour
                 instance.selectedIndex = -1;
             }
         }
+        Cursor.SetActive(false);
+    }
+    public static void RemoveCardFromHand(CardInHand cardObject)
+    {
+        instance.cardsInHand.Remove(cardObject.transform);
+        Destroy(cardObject.gameObject);
     }
 }

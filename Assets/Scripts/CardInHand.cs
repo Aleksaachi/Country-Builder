@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class CardInHand : MonoBehaviour
 {
+    public CardBase thisCard;
+    void Awake()
+    {
+        GetComponent<CardUpdater>().UpdateVisuals(thisCard);
+    }
     public void OnEnter()
     {
         Hand.OnCardEnter(this);
