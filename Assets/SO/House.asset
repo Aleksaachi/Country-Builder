@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: -3985759516408998331, guid: 9380604ca935a7c4cb938a27d522efb6, type: 3}
   description: Build a house on a tile.
   type: 1
-  buildingTile: {fileID: 11400000, guid: b255701aa24bbb249a5a2803545c4b88, type: 2}
+  buildingTile: {fileID: 11400000, guid: ccf1be01dd856e040af890fb54dbbbcd, type: 2}

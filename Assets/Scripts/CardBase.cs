@@ -16,10 +16,10 @@ public class CardBase : ScriptableObject
         Action
     }
 
-    public virtual CardGenericBuild GetGenericBuild()
-    {
-        return null;
-    }
+    // public virtual CardGenericBuild GetGenericBuild()
+    // {
+    //     return null;
+    // }
     public virtual bool UseOnTile(Vector3Int position)
     {
         Debug.Log("Base card class used.");

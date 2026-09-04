@@ -16,4 +16,5 @@ MonoBehaviour:
   icon: {fileID: -8945652883727379611, guid: a11d391f9e9c09248bc84a7d469e953f, type: 3}
   description: Build a sawmill on a tile.
   type: 1
-  buildingTile: {fileID: 11400000, guid: 3bfb4a27f6e14b347906c4b6679fda8a, type: 2}
+  requiresCity: 1
+  buildingTile: {fileID: 11400000, guid: c7bc95404518c2d4c89c7d5e150ec549, type: 2}

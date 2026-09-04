@@ -16,4 +16,5 @@ MonoBehaviour:
   icon: {fileID: -8078966772632430244, guid: 9380604ca935a7c4cb938a27d522efb6, type: 3}
   description: Build a farm on a tile.
   type: 1
-  buildingTile: {fileID: 11400000, guid: 379e6a70f2a7a7549bf3bc7362d4971c, type: 2}
+  requiresCity: 1
+  buildingTile: {fileID: 11400000, guid: ad5e5658047f04847a8ad2eaf81c4f2e, type: 2}

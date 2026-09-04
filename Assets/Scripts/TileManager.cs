@@ -11,7 +11,7 @@ public class TileManager : MonoBehaviour
         instance = this;
         
     }
-    public static TileBase GetBuidlingAt(Vector3Int worldPosition)
+    public static TileBase GetBuildingAt(Vector3Int worldPosition)
     {
         return instance.buidlingTilemap.GetTile(worldPosition);
     }
@@ -21,7 +21,7 @@ public class TileManager : MonoBehaviour
     }
     public static bool GetBuildable(Vector3Int worldPosition)
     {
-        return GetBuidlingAt(worldPosition) == null && GetDecorAt(worldPosition) == null;
+        return GetBuildingAt(worldPosition) == null && GetDecorAt(worldPosition) == null;
     }
     public static void SetBuidlingAt(Vector3Int worldPosition, TileBase buildingTile)
     {
