@@ -16,7 +16,6 @@ public class CardBase : ScriptableObject
     {
         None,
         Building,
-        Idea,
         Action
     }
 
