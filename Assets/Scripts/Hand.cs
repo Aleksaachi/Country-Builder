@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Unity.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Hand : MonoBehaviour
@@ -11,6 +12,7 @@ public class Hand : MonoBehaviour
     public Vector3 circleCenter;
     int hoverIndex;
     int selectedIndex;
+    public GameObject cardObjectPrefab;
     void Awake(){
         instance = this;
         hoverIndex = -1;
@@ -75,26 +77,61 @@ public class Hand : MonoBehaviour
     }
     public static void OnCardEndDrag(CardInHand cardObject)
     {
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3Int gridPosition = TileManager.GetGridPosition(worldPosition);
-        bool used = cardObject.thisCard.UseOnTile(gridPosition);
-        if (used)
+       PlayCardObject(cardObject);
+       Cursor.SetActive(false);
+    }
+    public static void RemoveCardFromHand(CardInHand cardObject)
+    {
+        instance.cardsInHand.Remove(cardObject.transform);
+        Destroy(cardObject.gameObject);
+    }
+    public static bool PlayCardObject(CardInHand cardObject){
+        if (cardObject == null || cardObject.thisCard == null) return false;
+        bool success = PlayCard(cardObject.thisCard);
+        if (success)
         {
             RemoveCardFromHand(cardObject);
             instance.selectedIndex = -1;
             instance.hoverIndex = -1;
-        }else{
+        }
+        else
+        {
             int index = instance.cardsInHand.IndexOf(cardObject.transform);
             if (instance.selectedIndex == index)
             {
                 instance.selectedIndex = -1;
             }
         }
-        Cursor.SetActive(false);
+        
+        return success;
     }
-    public static void RemoveCardFromHand(CardInHand cardObject)
+    public static bool PlayCard(CardBase card)
     {
-        instance.cardsInHand.Remove(cardObject.transform);
-        Destroy(cardObject.gameObject);
+        if (!ResourceManager.CheckForResources(card.cardCostType, card.cardCost)) return false;
+
+        bool used;
+        if (card.needTile){
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3Int gridPosition = TileManager.GetGridPosition(worldPosition);
+
+            used = card.UseOnTile(gridPosition);
+        }
+        else
+        {
+            used = card.Use();
+        }
+        
+        if (used)
+        {
+            ResourceManager.ConsumeResources(card.cardCostType, card.cardCost);
+        }
+        return used;
+    }
+    public static void AddCardToHand(CardBase card)
+    {
+        CardInHand newCard = Instantiate(instance.cardObjectPrefab, instance.transform).GetComponent<CardInHand>();
+        newCard.thisCard = card;
+
+        instance.cardsInHand.Add(newCard.transform);
     }
 }

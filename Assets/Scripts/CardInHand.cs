@@ -3,7 +3,7 @@ using UnityEngine;
 public class CardInHand : MonoBehaviour
 {
     public CardBase thisCard;
-    void Awake()
+    void Start()
     {
         GetComponent<CardUpdater>().UpdateVisuals(thisCard);
     }

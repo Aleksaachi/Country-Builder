@@ -7,7 +7,7 @@ public class CardBuildCity : CardBase
     public TileBase buildingTile;
     public override bool UseOnTile(Vector3Int position)
     {
-        if (CityManager.AddCity(position)){
+        if (TileManager.GetBuildable(position) && CityManager.AddCity(position)){
             TileManager.SetBuidlingAt(position, buildingTile);
             return true;
         }

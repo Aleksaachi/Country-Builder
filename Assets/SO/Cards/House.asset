@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d16386c803b7b409bab773985d3d8d, type: 3}
+  m_Name: House
+  m_EditorClassIdentifier: Assembly-CSharp::CardGenericBuild
+  cardName: Build house
+  icon: {fileID: -3985759516408998331, guid: 9380604ca935a7c4cb938a27d522efb6, type: 3}
+  description: Build a house on a tile.
+  type: 1
+  cardCostType: 0000000001000000
+  cardCost: 1e00000032000000
+  needTile: 1
+  requiresCity: 0
+  building: {fileID: 11400000, guid: a6e07691248cef74f834f1d4d536ee02, type: 2}

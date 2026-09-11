@@ -16,4 +16,7 @@ MonoBehaviour:
   icon: {fileID: -5075879681021990956, guid: 9380604ca935a7c4cb938a27d522efb6, type: 3}
   description: Settle a city on a plains tile.
   type: 1
+  cardCostType: 000000000100000002000000
+  cardCost: 140000001400000014000000
+  needTile: 1
   buildingTile: {fileID: 11400000, guid: 4f630956263cefa41848784d9776c06a, type: 2}

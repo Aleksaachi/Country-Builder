@@ -11,6 +11,7 @@ public class CardUpdater : MonoBehaviour
 
     public void UpdateVisuals(CardBase cardToUse)
     {
+        if (cardToUse == null) return;
         nameBox.text = cardToUse.cardName;
         descriptionBox.text = cardToUse.description;
         typeBox.text = cardToUse.type.ToString();

@@ -5,20 +5,17 @@ using UnityEngine.Tilemaps;
 public class CardGenericBuild : CardBase
 {
     public bool requiresCity;
-    public TileBase buildingTile;
-
-    // public override CardGenericBuild GetGenericBuild()
-    // {
-    //     return this;
-    // }
-
+    public Building building;
     public override bool UseOnTile(Vector3Int position)
     {
-        if (TileManager.GetBuildable(position)){
-            if (!requiresCity || CityManager.GetCityNearPoint(position) != -1){
-                TileManager.SetBuidlingAt(position, buildingTile);
-                return true;
-            }
+        City cityNearPosition = CityManager.GetCityNearPoint(position);
+        if (requiresCity && cityNearPosition != null){
+            return cityNearPosition.AddBuilding(building, position);
+        }
+        else if (!requiresCity && TileManager.GetBuildable(position))
+        {
+            TileManager.SetBuidlingAt(position, building.buildingTile);
+            return true;
         }
         return false;
     }

@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29d16386c803b7b409bab773985d3d8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2770523c2141a73408de7418aafb6bbe, type: 3}
   m_Name: Sawmill
-  m_EditorClassIdentifier: Assembly-CSharp::CardGenericBuild
-  cardName: Build sawmill
-  icon: {fileID: -8945652883727379611, guid: a11d391f9e9c09248bc84a7d469e953f, type: 3}
-  description: Build a sawmill on a tile.
-  type: 1
-  requiresCity: 1
+  m_EditorClassIdentifier: Assembly-CSharp::Building
   buildingTile: {fileID: 11400000, guid: c7bc95404518c2d4c89c7d5e150ec549, type: 2}
+  workType: 2
+  production: 50
+  productionResource: 1
