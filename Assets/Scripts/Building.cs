@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -8,6 +9,9 @@ public class Building : ScriptableObject
     public WorkType workType;
     public int production;
     public Resource productionResource;
+    public Building upgrade;
+    public List<CardBase> rewards;
+    public List<int> rewardWeights;
     public void WorkBuilding()
     {
         ResourceManager.ChangeResource(productionResource, production);

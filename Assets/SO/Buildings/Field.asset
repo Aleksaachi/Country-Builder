@@ -15,3 +15,9 @@ MonoBehaviour:
   buildingTile: {fileID: 11400000, guid: ad5e5658047f04847a8ad2eaf81c4f2e, type: 2}
   workType: 1
   production: 50
+  productionResource: 0
+  upgrade: {fileID: 0}
+  rewards:
+  - {fileID: 11400000, guid: 303f3b3b35d4024468181dcf93623c5e, type: 2}
+  - {fileID: 11400000, guid: 7a7ba4d3af3318e4099d6f3efe8899ff, type: 2}
+  rewardWeights: 0100000002000000

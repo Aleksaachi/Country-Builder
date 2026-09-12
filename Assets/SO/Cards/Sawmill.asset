@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d16386c803b7b409bab773985d3d8d, type: 3}
   m_Name: Sawmill
   m_EditorClassIdentifier: Assembly-CSharp::CardGenericBuild
-  cardName: Build sawmill
+  cardName: Sawmill
   icon: {fileID: -8945652883727379611, guid: a11d391f9e9c09248bc84a7d469e953f, type: 3}
   description: Build a sawmill on a tile.
   type: 1

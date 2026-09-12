@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d16386c803b7b409bab773985d3d8d, type: 3}
   m_Name: House
   m_EditorClassIdentifier: Assembly-CSharp::CardGenericBuild
-  cardName: Build house
+  cardName: House
   icon: {fileID: -3985759516408998331, guid: 9380604ca935a7c4cb938a27d522efb6, type: 3}
   description: Build a house on a tile.
   type: 1
